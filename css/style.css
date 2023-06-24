@@ -75,8 +75,8 @@ svg {
 
 /* Outline - рамка для відстеження кордонів, не впливає на розміри */
 .container {
-  width: 100%;
-  /* max-width: 1158px; */
+  /* width: 100%; */
+  max-width: 1158px;
   margin: 0 auto;
   padding-right: 15px;
   padding-left: 15px;
@@ -165,17 +165,19 @@ svg {
 }
 
 .section-withauttlt {
+  width: 100%;
   padding: 120px 0;
 }
 
 .container-withauttlt {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
   gap: 24px;
 }
 
 .list-withauttlt {
-  width: calc((100% - 24px * 3) / 4);
+  /* width: calc((100% - 24px * 3) / 4); */
+  width: 100%;
 }
 
 .titel-withauttlt {
