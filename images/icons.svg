@@ -72,5 +72,8 @@
     <symbol id="icon-telega" viewBox="0 0 32 32">
       <path fill="#fff" style="fill: var(--color1, #fff)" d="M32 2.667l-32 15 10.227 3.16 15.773-12.32-12 13.48v7.347l5.733-5.573 7.267 2.24 5-23.333z"></path>
     </symbol>
+    <symbol id="icon-hamburger" viewBox="0 0 43 32">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.2" d="M5.707 21.376h31.509M5.707 11.456h31.509M5.707 1.525h31.509"></path>
+    </symbol>
   </defs>
 </svg>
