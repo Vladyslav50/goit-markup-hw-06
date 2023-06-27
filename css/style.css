@@ -87,7 +87,7 @@ svg {
   margin: 0 auto;
   /* padding-right: 16px; */
   /* padding-left: 16px; */
-  outline: 2px solid red;
+  /* outline: 2px solid red; */
 }
 
 .header-nav {
@@ -1111,6 +1111,11 @@ svg {
   border: none;
   background-color: transparent;
   padding: 24px 0;
+  cursor: pointer;
+}
+
+.open-menu-btn:is(:hover, :focus) .open-menu-pic {
+  stroke: var(--pressed-state-color);
 }
 
 .open-menu-pic {
