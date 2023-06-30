@@ -74,6 +74,8 @@ svg {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
 }
 
 .container-nav {
@@ -157,7 +159,7 @@ svg {
 .hero-section {
   display: flex;
   /* padding: 188px 0; */
-  padding: 112px 0;
+  padding: 112px 54px;
 }
 
 .hero-button {
@@ -243,7 +245,7 @@ svg {
 
 .section-for {
   /* padding: 120px auto; */
-  padding: 96px 66px;
+  padding: 96px 16px;
 }
 
 .titel-team {
@@ -265,7 +267,8 @@ svg {
   align-items: center;
 
   /* width: calc((100% - 3 * 24px) / 4); */
-  width: 100%;
+  max-width: 264px;
+  /* width: 100%; */
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -475,14 +478,6 @@ svg {
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/people_office_mob.jpg);
-  background-repeat: no-repeat;
-  max-width: 1440px;
-  margin: 0 auto;
-  /* background-position: center; для вирівнювання фонового зображення відносно його власної ширини та висоти */
-  background-position: center;
-  /* background-size: cover; для позиціонування зображення на всю площу фону елемента */
-  background-size: cover;
-  /* text-align: center; */
 }
 
 @media (min-device-pixel-ratio: 2),
@@ -496,6 +491,17 @@ svg {
       ),
       url(../images/people_office_mob-2x.jpg);
   }
+}
+
+.hero-section {
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  margin: 0 auto;
+  /* background-position: center; для вирівнювання фонового зображення відносно його власної ширини та висоти */
+  background-position: center;
+  /* background-size: cover; для позиціонування зображення на всю площу фону елемента */
+  background-size: cover;
+  /* text-align: center; */
 }
 
 .hero-titel {
@@ -639,7 +645,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   /* padding: 120px 0; */
-  padding: 96px 0;
+  padding: 96px 16px;
 }
 
 .container-customers {
@@ -885,7 +891,8 @@ svg {
   transform: translate(-50%, -50%) scaleY(1);
   transition: transform var(--transicion);
   padding: 72px 24px 24px;
-  width: 408px;
+  width: calc(100% - 36px);
+  max-width: 408px;
   min-height: 584px;
   background: var(--modal-background-color);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -1120,7 +1127,7 @@ svg {
 
 .open-menu-pic {
   stroke: #2e2f42;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
 }
 
 .mob-menu {
@@ -1130,13 +1137,37 @@ svg {
   background-color: var(--white-background-color);
   top: 0;
   z-index: 2;
+  /* padding: 24px 24px 40px 40px; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  /* gap: 50px; */
+  overflow: auto;
+  transition: visibility var(--transicion), opacity var(--transicion);
+}
+
+.mobil {
+  /* поставимо по центру */
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
   padding: 24px 24px 40px 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 10px;
+  gap: 50px;
   overflow: auto;
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.mob-menu.is-hidden .mobil {
+  transform: translate(100%, -50%);
+}
+
 .close-menu-btn {
   display: block;
   /* margin-left: auto; */
@@ -1234,11 +1265,27 @@ svg {
 @media screen and (min-width: 428px) {
   .container {
     max-width: 396px;
+    /* max-width: 428px; */
+  }
+
+  .container-in-header {
+    padding-right: 0;
+    padding-left: 0;
   }
 
   /* Section 1 */
   .container-hero {
     padding: 0 38px;
+  }
+
+  .section-for {
+    /* padding: 120px auto; */
+    padding: 96px 0;
+  }
+
+  .container-team {
+    /* padding-left: 66px; */
+    /* padding-right: 66px; */
   }
 
   /* Section 5 */
@@ -1263,9 +1310,14 @@ svg {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 736px;
+    /* max-width: 768px; */
   }
 
   /*Header*/
+  .container-in-header {
+    padding-right: 0;
+    padding-left: 0;
+  }
 
   .logo {
     margin-right: 120px;
@@ -1285,7 +1337,7 @@ svg {
 
   /* Hero */
   .container-hero {
-    row-gap: 36px;
+    /* row-gap: 36px; */
   }
 
   .hero-titel {
@@ -1317,8 +1369,12 @@ svg {
   }
 
   /* Section 1 */
+  .hero-section {
+    padding: 112px 0;
+  }
+
   .container-hero {
-    padding: 0 120px;
+    /* padding: 0 120px; */
   }
   .hero-titel {
     font-size: 56px;
@@ -1334,6 +1390,15 @@ svg {
   }
 
   /* Section 4 */
+
+  .container-team {
+    padding-left: 92px;
+    padding-right: 92px;
+  }
+
+  .section-for {
+    padding: 96px 0;
+  }
 
   .list-section-for {
     width: calc((100% - 24px) / 2);
@@ -1394,6 +1459,11 @@ svg {
     max-width: 1128px;
   }
   /* Header */
+  .container-in-header {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
   .logo {
     margin-right: 76px;
   }
@@ -1422,6 +1492,7 @@ svg {
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/people_office.jpg);
+    padding: 188px 0;
   }
 
   @media (min-device-pixel-ratio: 2),
