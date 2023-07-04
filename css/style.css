@@ -945,6 +945,12 @@ svg {
   pointer-events: none;
 }
 
+/* Блокує основну сторінку від скролу */
+
+.no-scroll {
+  overflow: hidden;
+}
+
 .modal-title {
   font-weight: 500;
   font-size: 16px;
